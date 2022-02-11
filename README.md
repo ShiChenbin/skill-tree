@@ -5,6 +5,18 @@
 https://www.cainiaojc.com/springboot/springboot-tutorial.html
 ## gradle 教程
 https://www.w3cschool.cn/gradle/ √ 已安装
+Gradle 7.4
+------------------------------------------------------------
+
+Build time:   2022-02-08 09:58:38 UTC
+Revision:     f0d9291c04b90b59445041eaa75b2ee744162586
+
+Kotlin:       1.5.31
+Groovy:       3.0.9
+Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
+JVM:          17.0.1 (Oracle Corporation 17.0.1+12-LTS-39)
+OS:           Windows 10 10.0 amd64
+
 ## git 
 https://git-scm.com/downloads √ 已安装
 
@@ -18,6 +30,14 @@ java version "17.0.1" √
 idea √
 ## 基础语法
 - list
+
+
+头文件
+```java
+import java.util.ArrayList;
+import java.util.List;
+```
+
 - map
 - completablefuture
 - stream api
