@@ -1,11 +1,12 @@
-# skill-tree
+# skill-tree 实习
 技能树-熟悉部分以√标注\完成部分也以√注明
 # 开发相关
 ## spring boot 教程
 https://www.cainiaojc.com/springboot/springboot-tutorial.html
+
 ## gradle 教程
-https://www.w3cschool.cn/gradle/ 
-√ 已安装
+https://www.w3cschool.cn/gradle/ √ 已安装
+
 Gradle 7.4
 ------------------------------------------------------------
 
@@ -18,10 +19,15 @@ Ant:          Apache Ant(TM) version 1.10.11 compiled on July 10 2021
 JVM:          17.0.1 (Oracle Corporation 17.0.1+12-LTS-39)
 OS:           Windows 10 10.0 amd64
 
-## git 
+## git （代码版本管理工具）
 https://git-scm.com/downloads √ 已安装
 
-## chiner
+## gitee
+√ 已安装
+
+## chiner 数据库关系模型设计平台
+√ 已安装
+
 ## navicat
 ## postman
 ## tabby
@@ -41,6 +47,8 @@ import java.util.List;
 
 - map
 - completablefuture
+
+https://www.liaoxuefeng.com/wiki/1252599548343744/1306581182447650
 - stream api
 - 
 ## 
