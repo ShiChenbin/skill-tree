@@ -4,7 +4,8 @@
 ## spring boot 教程
 https://www.cainiaojc.com/springboot/springboot-tutorial.html
 ## gradle 教程
-https://www.w3cschool.cn/gradle/ √ 已安装
+https://www.w3cschool.cn/gradle/ 
+√ 已安装
 Gradle 7.4
 ------------------------------------------------------------
 
