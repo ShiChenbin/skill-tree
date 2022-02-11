@@ -30,15 +30,15 @@ https://git-scm.com/downloads √ 已安装
 
 ## navicat
 ## postman
+√ 已安装
 ## tabby
+√ 已安装
 # java
 ## 基本环境
 java version "17.0.1" √
 idea √
 ## 基础语法
 - list
-
-
 头文件
 ```java
 import java.util.ArrayList;
