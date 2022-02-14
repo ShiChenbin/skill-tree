@@ -14,7 +14,10 @@ Stream API可以极大提高Java程序员的生产力，让程序员写出高效
 
 - stream() − 为集合创建串行流。
 - parallelStream() − 为集合创建并行流。
-
+```java
+List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+```
 # http get/post
 GET和POST，两者都是超文本传输协议（HTTP）协议中发送请求的方法，本质上都是TCP链接，并无差别
 ## GET
@@ -26,3 +29,6 @@ POST方法用于将实体提交到指定的资源，通常导致在服务器上�
 ### 区别
 GET 用于获取信息，是无副作用的，是幂等的，且可缓存
 POST 用于修改服务器上的数据，有副作用，非幂等，不可缓存
+
+GET产生一个TCP数据包，POST产生两个TCP数据包
+## 
