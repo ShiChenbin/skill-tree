@@ -1,0 +1,28 @@
+# 目录
+1. java 语法基础知识（List、Map、CompletableFuture、Stream API）
+2. http get/post 知识
+3. json、restful 知识
+4. annotation、orm 概念
+5. spring、spring mvc、springboot、jpa 概念
+6. vue、element ui 概念
+
+# java
+Stream API可以极大提高Java程序员的生产力，让程序员写出高效率、干净、简洁的代码。
+这种风格将要处理的元素集合看作一种流， 流在管道中传输， 并且可以在管道的节点上进行处理， 比如筛选， 排序，聚合等。
+元素流在管道中经过中间操作（intermediate operation）的处理，最后由最终操作(terminal operation)得到前面处理的结果。
+在 Java 8 中, 集合接口有两个方法来生成流：
+
+- stream() − 为集合创建串行流。
+- parallelStream() − 为集合创建并行流。
+
+# http get/post
+GET和POST，两者都是超文本传输协议（HTTP）协议中发送请求的方法，本质上都是TCP链接，并无差别
+## GET
+GET方法请求一个指定资源的表示形式，使用GET的请求应该只被用于获取数据
+## POST
+POST方法用于将实体提交到指定的资源，通常导致在服务器上的状态变化或副作用。
+但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中会体现出一些区别
+
+### 区别
+GET 用于获取信息，是无副作用的，是幂等的，且可缓存
+POST 用于修改服务器上的数据，有副作用，非幂等，不可缓存
