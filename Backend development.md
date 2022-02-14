@@ -96,9 +96,25 @@ List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).col
 
 ## filter
 filter 方法用于通过设置的条件过滤出元素。
+Stream.filter()是Stream的另一个常用转换方法。
+
+所谓filter()操作，就是对一个Stream的所有元素一一进行测试，不满足条件的就被“滤掉”了，剩下的满足条件的元素就构成了一个新的Stream。
+
+例如，我们对1，2，3，4，5这个Stream调用filter()，传入的测试函数f(x) = x % 2 != 0用来判断元素是否是奇数，这样就过滤掉偶数，只剩下奇数，因此我们得到了另一个序列1，3，5：
+
+```java
+import java.util.stream.IntStream;
+public class Main {
+    public static void main(String[] args) {
+        IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+                .filter(n -> n % 2 != 0)
+                .forEach(System.out::println);
+    }
+}
 ```
-List
-```
+## CompletableFuture
+使用future获得异步执行结果时，要么调用阻塞方法get(),要么轮询看isDone()是否位true，这两种方法都不是很好，因为主线程也会被迫等待。
+从java 8开始引入了completableFuture，它针对Future做了改进，可以传入回调对象，当异步任务完成或者发生异常时，自动回调对象的回调方法。
 
 # http get/post
 GET和POST，两者都是超文本传输协议（HTTP）协议中发送请求的方法，本质上都是TCP链接，并无差别
