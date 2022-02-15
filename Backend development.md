@@ -207,6 +207,7 @@ json 对象
 ```json
 var str2 = { "name": "asan", "sex": "man" };
 ```
+    
 json字符串
     
 ```json
