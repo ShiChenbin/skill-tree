@@ -23,6 +23,50 @@ linkedlist
 - - 每个节点维护了prev和next指针，用于遍历链表。同时链表还维护了first和last指针，分别指向第一个元素和最后一个元素。
 - linkedlist的线程是不安全的。
 
+List<E>的主要几个接口方法
+- 在末尾添加一个元素boolean add(E e)
+- 在指定索引添加一个元素：boolean add(int index, E e)
+- 删除指定索引的元素：E remove(int index)
+- 删除某个元素：boolean remove(Object e)
+- 获取指定索引的元素：E get(int index)
+- 获取链表大小（包含元素的个数）：int size()
+
+我们可以通过List接口提供的of()方法，根据给定元素快速创建List：
+```java
+List<Integer> list = List.of(1, 2, 3);
+```
+
+和数组类型，我们要遍历一个List，完全可以用for循环根据索引配合get(int)方法遍历：
+```java
+import java.util.List;
+public class Main {
+    public static void main(String[] args) {
+        List<String> list = List.of("apple", "pear", "banana");
+        for (int i=0; i<list.size(); i++) {
+            String s = list.get(i);
+            System.out.println(s);
+        }
+    }
+}
+```
+但这种方式并不推荐，一是代码复杂，二是因为get(int)方法只有ArrayList的实现是高效的，换成LinkedList后，索引越大，访问速度越慢。
+
+所以我们要始终坚持使用迭代器Iterator来访问List。Iterator本身也是一个对象，但它是由List的实例调用iterator()方法的时候创建的。Iterator对象知道如何遍历一个List，并且不同的List类型，返回的Iterator对象实现也是不同的，但总是具有最高的访问效率。
+
+Iterator对象有两个方法：boolean hasNext()判断是否有下一个元素，E next()返回下一个元素。因此，使用Iterator遍历List代码如下
+```java
+import java.util.Iterator;
+import java.util.List;
+public class Main {
+    public static void main(String[] args) {
+        List<String> list = List.of("apple", "pear", "banana");
+        for (Iterator<String> it = list.iterator(); it.hasNext(); ) {
+            String s = it.next();
+            System.out.println(s);
+        }
+    }
+}
+```
 vector 和 arraylist非常类似，同样继承自abstractlist。
 - 两者的区别在于并发安全上，vector是线程安全的，为arraylist是线程不安全的
 - - 例，当vector创建一个iterator并使用时，另一个线程改变了vector的状态，比如说添加或删除了一些元素，这时候再调用iterator会抛出异常。
@@ -129,4 +173,42 @@ GET 用于获取信息，是无副作用的，是幂等的，且可缓存
 POST 用于修改服务器上的数据，有副作用，非幂等，不可缓存
 
 GET产生一个TCP数据包，POST产生两个TCP数据包
-## 
+
+    
+# json
+## 简介
+JSON(JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。
+理想的数据交换语言
+## json与js的关系
+JSON 是 JS 对象的字符串表示法，它使用文本表示一个 JS 对象的信息，本质是一个字符串。
+## json 名称/值对
+```json
+    "name":"rname"
+```
+## JSON 值
+- 数字（整数或浮点数）
+    ```json
+    { "age":30 }
+    ```
+- 字符串（在双引号中）
+    ```json
+    
+    ```
+    
+- 逻辑值（true 或 false）``` ```
+- 数组（在中括号中）``` ```
+- 对象（在大括号中）``` ```
+- null``` ```
+    
+ ## json对象和json字符串的区别
+    json 对象和 json 字符串的区别：
+
+json 对象
+```json
+var str2 = { "name": "asan", "sex": "man" };
+```
+json字符串
+    
+```json
+var str1 = '{ "name": "deyuyi", "sex": "man" }';
+```
