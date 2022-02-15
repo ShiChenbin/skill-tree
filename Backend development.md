@@ -205,7 +205,7 @@ JSON 是 JS 对象的字符串表示法，它使用文本表示一个 JS 对象�
 
 json 对象
 ```json
-var str2 = { "name": "asan", "sex": "man" };
+var str2 = { "name": "asam", "sex": "man" };
 ```
     
 json字符串
