@@ -178,7 +178,14 @@ GET产生一个TCP数据包，POST产生两个TCP数据包
 # json
 ## 简介
 JSON(JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。
-理想的数据交换语言
+理想的数据交换语言,数据传输是在我们敲代码时，经常遇到的一个场景，前后端交互。给数据一个统一的格式有利于我们编写和解析数据。
+## json语法规则
+json 语法是 javaScript 对象表示语法的子集
+数据在名称/值对中
+数据由逗号分隔
+大括号 {} 保存对象
+中括号 [] 保存数组，数组可以包含多个对象
+    
 ## json与js的关系
 JSON 是 JS 对象的字符串表示法，它使用文本表示一个 JS 对象的信息，本质是一个字符串。
 ## json 名称/值对
@@ -194,22 +201,109 @@ JSON 是 JS 对象的字符串表示法，它使用文本表示一个 JS 对象�
     ```json
     
     ```
-    
-- 逻辑值（true 或 false）``` ```
-- 数组（在中括号中）``` ```
-- 对象（在大括号中）``` ```
-- null``` ```
-    
- ## json对象和json字符串的区别
-    json 对象和 json 字符串的区别：
+- JSON 对象在大括号 {} 中书写：
+```
+{key1 : value1, key2 : value2, ... keyN : valueN }
 
-json 对象
+var str2 = {"name":"asam","sex":"man"};
+```
+    
+- 逻辑值（true 或 false）
+```
+{"flag":true}
+```
+
+- null
+``` 
+{"runoob":null}
+```
+    
+## json对象和json字符串的区别
+   json 对象和 json 字符串的区别：
+
+json 对象（在大括号中）
 ```
 var str2 = { "name": "asam", "sex": "man" };
 ```
-    
 json字符串
-    
 ```
 var str1 = '{ "name": "deyuyi", "sex": "man" }';
 ```
+
+## json数组
+json数组在中括号中
+数组作为json对象
+```json
+{
+    "name":"网站"
+    "num":3,
+    "sites":["Google", "Runoob", "Taobao"]
+}
+```
+
+## JSON 提供了 stringify 和 parse 方法的内置对象
+JSON是一个提供了stringify和parse方法的内置对象
+- stringify将js对象转化为符合json标准的字符串
+- parse将符合json标准的字符串转化为js对象
+
+## json.parse
+JSON通常用于与服务端交换数据。
+在接受服务器数据时一般是字符串
+我们可以使用JSON.parse()方法将数据转换为JavaScript对象
+
+### 语法
+```
+JSON,parse(text[,reviver])
+```
+参数说明：
+    text必需，一个有效的JSON文件
+    reviver可选，一个转换结果的参数，将为对象的每个成员调用此函数。
+```
+    var obj = JSON.parse('{"name":"runoob", "alexa":10000,"site":"runoob.com"}');
+    document.getElementById("demo").innerHTML = obj.name + ": " + abj.site;
+```
+## json实例
+```
+// 假设我想查询符合某些条件的前3个人的信息.
+// 然后我发送了一个请求，服务器处理完之后，扔回了这些JSON数据.
+var json = {
+    'one':{'name':'John green', 'sex':'female', 'age':20},
+    'two':{'name':'Hank green', 'sex':'male', 'age':18},
+    'three':{'name':'Lucy', 'sex':'unknown', 'age':30}
+};
+
+
+//使用数据的3种方法
+//alert(json.one.name);      
+//alert(json['one']['name']);
+//alert(json['one'].name);    //也可以混合着用
+//建议使用第二种方法..也就是json['one']['name']
+
+
+// 循环处理的小案例(可以去掉注释运行看看)
+/*
+for(a in json){
+   alert(json[a]['name']);
+}
+*/
+
+
+//我们可以对JSON处理，然后添加到页面上
+for(a in json){ 
+    var node = document.createElement('li');  
+    //创建li标签
+    node.className = "yoholi";
+    var text = document.createTextNode(json[a]['name']); 
+    //创建文本节点
+    
+    node.appendChild(text);
+    //文本节点添加到li标签里
+    
+    document.body.appendChild(node); 
+    //把li标签添加到body标签里
+}
+
+```
+    
+## 注：比较优秀javaScript码风
+    https://www.zhihu.com/search?type=content&q=javascript%20%E4%BC%98%E7%A7%80%E7%9A%84%E7%A0%81%E9%A3%8E
